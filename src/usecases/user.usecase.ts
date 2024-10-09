@@ -3,12 +3,12 @@ import { UserRepositoryPrisma } from "../repositories/user.repository";
 
 export class UserUseCase {
     private userRepository: UserRepository;
-    constructor(){
+    constructor() {
         this.userRepository = new UserRepositoryPrisma();
     }
 
-    async create({ name, email }: UserCreate): Promise<User>{
-        const result = await this.userRepository.create({email, name});
+    async create({ name, email }: UserCreate): Promise<User> {
+        const result = await this.userRepository.create({ email, name });
         return result;
     }
 }
