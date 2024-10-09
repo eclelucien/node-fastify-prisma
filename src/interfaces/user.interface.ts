@@ -1,4 +1,4 @@
-export interface User{
+export interface User {
     id: string;
     email: string;
     name: string;
@@ -9,6 +9,6 @@ export interface UserCreate {
     name: string;
 }
 
-export interface UserRepository{
+export interface UserRepository {
     create(data: UserCreate): Promise<User>;
 }
