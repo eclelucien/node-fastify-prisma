@@ -1,15 +1,18 @@
 import fastify, { FastifyInstance } from "fastify";
 import { userRoutes } from "./routes/user.routes";
+import { contactRoutes } from "./routes/contact.routes";
 
 const app: FastifyInstance = fastify({ logger: true });
 
+// Register user routes
 app.register(userRoutes, {
     prefix: 'users'
-})
+});
 
-app.register(userRoutes, {
+// Register contact routes
+app.register(contactRoutes, {
     prefix: 'contacts'
-})
+});
 
 app.listen(
     {

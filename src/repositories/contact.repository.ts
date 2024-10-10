@@ -1,39 +1,33 @@
 import { prisma } from "../database/prisma.client";
-import { Contact, ContactCreate, ContactCreateData, ContactRepository } from "../interfaces/contact.interface";
+import { Contact, ContactCreateData, ContactRepository } from "../interfaces/contact.interface";
 
 export class ContactRepositoryPrisma implements ContactRepository {
-    async create(data: ContactCreateData): Promise<Contact> {
+
+    async create(data: ContactCreateData): Promise<any> {
+
         const result = await prisma.contacts.create({
             data: {
                 email: data.email,
                 name: data.name,
                 phone: data.phone,
-                userId: data.userId, // Keep this if it is part of your data model
-                user: {
-                    connect: { email: data.userEmail }, // Connect the contact to the user using the email
-                },
+                userId: data.userId,
             },
         });
-        
+
         return result;
     }
 
-
-    async findByEmailOrPhone(email: string, phone: string): Promise<Contact | null> {
+    async findByEmailOrPhone(email: string, phone: string): Promise<any | null> {
 
         const result = await prisma.contacts.findFirst({
             where: {
                 OR: [
-                    {
-                        email,
-                    },
-                    {
-                        phone
-                    }
-                ]
-            }
+                    { email },
+                    { phone },
+                ],
+            },
         });
-
+        
         return result || null;
     }
 }

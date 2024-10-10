@@ -31,7 +31,6 @@ class ContactUseCase {
             name,
             phone,
             userId: user.id,
-            userEmail,
         })
         return contact;
     }

@@ -19,8 +19,9 @@ export interface ContactCreateData {
     email: string;
     phone: string;
     userId: string;
-    userEmail: string
 }
+
+
 
 export  interface ContactRepository{
     create(data: ContactCreateData): Promise<Contact>;
