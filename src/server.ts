@@ -1,6 +1,6 @@
 import fastify, { FastifyInstance } from "fastify";
 import { userRoutes } from "./routes/user.routes";
-import { contactRoutes } from "./routes/contact.routes";
+import { contactsRoutes } from './routes/contact.routes';
 
 const app: FastifyInstance = fastify({ logger: true });
 
@@ -10,7 +10,7 @@ app.register(userRoutes, {
 });
 
 // Register contact routes
-app.register(contactRoutes, {
+app.register(contactsRoutes, {
     prefix: 'contacts'
 });
 
