@@ -7,6 +7,10 @@ app.register(userRoutes, {
     prefix: 'users'
 })
 
+app.register(userRoutes, {
+    prefix: 'contacts'
+})
+
 app.listen(
     {
         port: 3100,

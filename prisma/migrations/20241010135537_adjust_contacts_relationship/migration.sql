@@ -13,9 +13,10 @@ CREATE TABLE "new_contacts" (
     "email" TEXT NOT NULL,
     "phone" TEXT NOT NULL,
     "userEmail" TEXT NOT NULL,
+    "userId" TEXT NOT NULL,
     CONSTRAINT "contacts_userEmail_fkey" FOREIGN KEY ("userEmail") REFERENCES "users" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
-INSERT INTO "new_contacts" ("email", "id", "name", "phone") SELECT "email", "id", "name", "phone" FROM "contacts";
+INSERT INTO "new_contacts" ("email", "id", "name", "phone", "userId") SELECT "email", "id", "name", "phone", "userId" FROM "contacts";
 DROP TABLE "contacts";
 ALTER TABLE "new_contacts" RENAME TO "contacts";
 PRAGMA foreign_keys=ON;

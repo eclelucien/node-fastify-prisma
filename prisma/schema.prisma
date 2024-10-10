@@ -22,12 +22,13 @@ model User {
 }
 
 model Contacts {
-  id     String @id @default(uuid())
-  name   String
-  email  String
-  phone  String
-  userId String
-  user   User   @relation(fields: [userId], references: [id])
+  id        String @id @default(uuid())
+  name      String
+  email     String
+  phone     String
+  userEmail String
+  userId    String
+  user      User   @relation(fields: [userEmail], references: [id])
 
   @@map("contacts")
 }

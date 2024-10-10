@@ -1,7 +1,7 @@
 /*
   Warnings:
 
-  - Added the required column `userEmail` to the `contacts` table without a default value. This is not possible if the table is not empty.
+  - Added the required column `userId` to the `contacts` table without a default value. This is not possible if the table is not empty.
 
 */
 -- RedefineTables
@@ -13,9 +13,10 @@ CREATE TABLE "new_contacts" (
     "email" TEXT NOT NULL,
     "phone" TEXT NOT NULL,
     "userEmail" TEXT NOT NULL,
+    "userId" TEXT NOT NULL,
     CONSTRAINT "contacts_userEmail_fkey" FOREIGN KEY ("userEmail") REFERENCES "users" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
-INSERT INTO "new_contacts" ("email", "id", "name", "phone") SELECT "email", "id", "name", "phone" FROM "contacts";
+INSERT INTO "new_contacts" ("email", "id", "name", "phone", "userEmail") SELECT "email", "id", "name", "phone", "userEmail" FROM "contacts";
 DROP TABLE "contacts";
 ALTER TABLE "new_contacts" RENAME TO "contacts";
 PRAGMA foreign_keys=ON;
