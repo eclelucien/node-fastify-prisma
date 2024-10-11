@@ -8,7 +8,7 @@ import { FastifyReply, FastifyRequest } from 'fastify';
  * @returns {Promise<void>} A promise that resolves when the middleware has completed.
  */
 export async function authMiddleware(req: FastifyRequest, reply: FastifyReply) {
-    
+
   const apiEmail = req.headers['email'];
 
   if (!apiEmail) {

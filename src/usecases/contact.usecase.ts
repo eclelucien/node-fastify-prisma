@@ -7,18 +7,12 @@ import { UserRepository } from '../interfaces/user.interface';
 import { ContactsRepositoryPrisma } from '../repositories/contact.repository';
 import { UserRepositoryPrisma } from '../repositories/user.repository';
 
-/**
- * Use case class for managing contact-related business logic.
- */
 class ContactUseCase {
 
     private contactRepository: ContactRepository;
+
     private userRepository: UserRepository;
 
-    /**
-     * Initializes the ContactUseCase with contact and user repository instances.
-     * The default repositories are ContactsRepositoryPrisma and UserRepositoryPrisma.
-     */
     constructor() {
         this.contactRepository = new ContactsRepositoryPrisma();
         this.userRepository = new UserRepositoryPrisma();

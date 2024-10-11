@@ -5,10 +5,7 @@ import {
     ContactRepository,
 } from '../interfaces/contact.interface';
 
-/**
- * Prisma implementation of the ContactRepository interface.
- * This class provides methods for contact-related database operations.
- */
+
 class ContactsRepositoryPrisma implements ContactRepository {
 
     /**
