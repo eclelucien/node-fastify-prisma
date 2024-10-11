@@ -40,6 +40,7 @@ Create a `.env` file in the root of the project with the following content:
 
 ```env
 DATABASE_URL="file:./dev.db"
+```
 
 ## To set up the database schema
 npx prisma migrate dev --name init
