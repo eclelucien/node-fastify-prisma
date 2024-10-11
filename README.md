@@ -6,12 +6,6 @@ This project is a simple API built using **Node.ts** (TypeScript), **Prisma** as
 
 - [Installation](#installation)
 - [Environment Variables](#environment-variables)
-- [Database](#database)
-- [Endpoints](#endpoints)
-  - [User CRUD](#user-crud)
-  - [Contact CRUD](#contact-crud)
-- [Running the Server](#running-the-server)
-- [License](#license)
 
 ## Installation
 
